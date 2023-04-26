@@ -53,6 +53,25 @@
         </ul>
     </div>
 
+    <div id="test-generate-by-JS"></div>
+    <script language="javascript" type="text/javascript">
+        const div1 = document.getElementById("test-generate-by-JS");
+
+        for(let i=0; i<3; i++){
+        const newDiv = document.createElement("div");
+        for(let j=0; j<3; j++){
+            const newBtn = document.createElement("button");
+            newBtn.innerHTML = i * 3 + j + 1;
+
+            newBtn.onclick = () => {
+            console.log(`ボタン${newBtn.innerHTML}が押されました！`);
+            }
+            newDiv.appendChild(newBtn);
+        }
+        div1.appendChild(newDiv);
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     </body>
