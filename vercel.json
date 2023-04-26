@@ -4,7 +4,7 @@
     ],
     "builds": [
         {
-            "src": "config/wsgi.py",
+            "src": "solu_site/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
@@ -26,7 +26,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "config/wsgi.py"
+            "dest": "solu_site/wsgi.py"
         }
     ]
 }
