@@ -41,9 +41,9 @@
                 <div class="btn-group dropend">
                     <button class="btn dropdown-toggle dropdown-item" id="dropdown-menu-2" data-bs-toggle="dropdown" aria-expanded="false">通常教室</button>
                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu-2">
-                        <li><a class="dropdown-item" href="#">finish-place 1</a></li>
-                        <li><a class="dropdown-item" href="#">finish-place 2</a></li>
-                        <li><a class="dropdown-item" href="#">finish-place 3</a></li>
+                        <li><a id="dropdown-item-1-1" class="dropdown-item" onclick="">finish-place 1</a></li>
+                        <li><a id="dropdown-item-1-2" class="dropdown-item" onclick="">finish-place 2</a></li>
+                        <li><a id="dropdown-item-1-3" class="dropdown-item" onclick="">finish-place 3</a></li>
                     </ul>
                 </div>
                 <!--<a class="dropdown-item" href="#" type="button" id="dropdown-menu-2">menu-item1</a>-->
@@ -53,22 +53,37 @@
         </ul>
     </div>
 
+    <div id="checkFinishPlace"></div>
+    
+    <!--
     <div id="test-generate-by-JS"></div>
     <script language="javascript" type="text/javascript">
         const div1 = document.getElementById("test-generate-by-JS");
 
         for(let i=0; i<3; i++){
-        const newDiv = document.createElement("div");
-        for(let j=0; j<3; j++){
-            const newBtn = document.createElement("button");
-            newBtn.innerHTML = i * 3 + j + 1;
+            const newDiv = document.createElement("div");
+            for(let j=0; j<3; j++){
+                const newBtn = document.createElement("button");
+                newBtn.innerHTML = i * 3 + j + 1;
 
-            newBtn.onclick = () => {
-            console.log(`ボタン${newBtn.innerHTML}が押されました！`);
+                newBtn.onclick = () => {
+                console.log(`ボタン${newBtn.innerHTML}が押されました！`);
+                }
+                newDiv.appendChild(newBtn);
             }
-            newDiv.appendChild(newBtn);
-        }
         div1.appendChild(newDiv);
+        }
+    </script>
+    -->
+
+    <script language="javascript" type="text/javascript">
+        function getHtmlText(){
+            var placeText = document.getElementById('dropdown-item-1-1');
+            setFinishPlace(placeText.textContent);
+        }
+        function setFinishPlace(placeData){
+            var finishPlaceDiv = document.getElementById('dropdown-item-1-1');
+            finishPlaceDiv.textContent = placeData;
         }
     </script>
 
