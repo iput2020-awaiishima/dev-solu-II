@@ -52,7 +52,7 @@
         </ul>
     </div>
 
-    <h1 id="checkFinishPlace"></h1>
+    <h1>目的地: <span id="checkGoal"></span></h1>
     
     <!--
     <div id="test-generate-by-JS"></div>
@@ -81,8 +81,8 @@
             setFinishPlace(placeText.textContent);
         }
         function setFinishPlace(placeData){
-            var finishPlaceDiv = document.getElementById('checkFinishPlace');
-            finishPlaceDiv.textContent = placeData;
+            var finishPlaceSpan = document.getElementById('checkGoal');
+            finishPlaceSpan.textContent = placeData;
         }
     </script>
 
