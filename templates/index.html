@@ -34,9 +34,11 @@
         <button type="button" class="btn-close" aria-label="Close"></button>
     </div>
     -->
+    <!--
     <h1>現在地: <span id="receivedName"></span></h1>
+    -->
     <!-- write code below here -->
-    <div class="dropdown btn-group d-grid gap-2">
+<!--    <div class="dropdown btn-group d-grid gap-2">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-menu-1" data-bs-auto-close="outside">
         目的地を選択
         </button>
@@ -50,8 +52,8 @@
                         <li><a id="dropdown-item-1-3" class="dropdown-item" onclick="getHtmlText(this.id);closeDropdown('dropdown-menu')">finish-place 3</a></li>
                     </ul>
                 </div>
-                <!--<a class="dropdown-item" href="#" type="button" id="dropdown-menu-2">menu-item1</a>-->
-            </li>
+-->                <!--<a class="dropdown-item" href="#" type="button" id="dropdown-menu-2">menu-item1</a>-->
+<!--            </li>
             <li><a class="dropdown-item" href="#">大教室</a></li>
             <li><a class="dropdown-item" href="#">特殊室</a></li>
         </ul>
@@ -61,7 +63,7 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary me-md-2" type="button" href="">案内開始</button>
     </div>
-    
+-->    
     <!--
     <div id="test-generate-by-JS"></div>
     <script language="javascript" type="text/javascript">
@@ -83,7 +85,31 @@
     </script>
     -->
 
+    <h1>現在地: <span id="receivedName"></span></h1>
+    <!-- write code below here -->
+    <div class="dropdown btn-group d-grid gap-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-menu-1" data-bs-auto-close="outside">
+        目的地を選択
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1" id="dropdown-menu"></ul>
+    </div>
+
+    <h1>目的地: <span id="checkGoal"></span></h1>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button" href="">案内開始</button>
+    </div>
+
     <script language="javascript" type="text/javascript">
+        const IPUT_rooms_type = ["通常教室","大教室","特殊室",];
+        const IPUT_rooms = [
+            {"name":"311","type":"通常教室"},
+            {"name":"Aホール","type":"大教室"},
+            {"name":"Bホール","type":"大教室"},
+            {"name":"図書室","type":"特殊室"},
+            {"name":"保健室","type":"特殊室"},
+            {"name":"finish-place","type":"特殊室"},
+        ];
+
         function getHtmlText(id){
             var placeText = document.getElementById(id);
             setFinishPlace(placeText.textContent);
@@ -95,6 +121,35 @@
         function closeDropdown(id){
             let button_element = document.getElementById(id); //get elements
             button_element.classList.remove("show"); //remove class "show"
+        }
+
+        var ul = document.getElementById("dropdown-menu");
+        for(var count = 0; count < IPUT_rooms_type.length; count++){
+            var li_one = document.createElement("li");
+            var div = document.createElement("div");
+            div.className = "btn-group" + "dropend";
+            var button = document.createElement("button");
+            button.className = "btn" + "dropdown-toggle" + "dropdown-item";
+            button.id = "dropdown-menu-2";
+            button.data-bs-toggle="dropdown";
+            button.aria-expanded = "false";
+            button.textContent = IPUT_rooms_type[count];
+            var room_selection = IPUT_rooms.filter(function(object) {
+                return object.type == IPUT_rooms_type[count];
+            }).shift();
+            console.log(room_selection);
+            var ul_sub = document.createElement("ul");
+            ul_sub.className = "dropdown-menu";
+            ul_sub.aria-labelledby = "dropdown-menu-2";
+            for(count_sub = 0; count_sub < room_selection.length; count_sub++){
+                var li_two = document.createElement("li");
+                var a = document.createElement("a");
+                a.id = "dropdown-item" + count + "-" + count_sub;
+                a.className = "dropdown-item";
+                a.addEventListener("click",getHtmlText(this.id));
+                a.addEventListener("click",closeDropdown('dropdown-menu'));
+                a.textContent = room_selection.name;
+            }
         }
     </script>
 
