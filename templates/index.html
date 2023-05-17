@@ -119,6 +119,10 @@
         //li.innerText = "1";
         var div = document.createElement("div");
         div.className = "btn-group dropend";
+        var button = document.createElement("button");
+        button.className = "btn dropdown-toggle dropdown-item";
+        button.id = "dropdown-menu-2";
+        div.appendChild(button); 
         li.appendChild(div);
         ul_main.appendChild(li);
         
