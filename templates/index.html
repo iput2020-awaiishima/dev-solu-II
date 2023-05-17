@@ -129,7 +129,7 @@
             button.innerText = room_types[count];
             button.setAttribute("data-bs-toggle", "dropdown"); //add attribute data-bs-toggele="dropdown" by js
             button.setAttribute("aria-expanded", "false"); //add attribute aria-expanded="false" by js
-            button.setAttribute("onclick","console.log(1)"); //for check button's movement
+            //button.setAttribute("onclick","console.log(1)"); //for check button's movement
             var ul_sub = document.createElement("ul");
             ul_sub.className = "dropdown-menu";
             for(count_sub = 0;count_sub < room_names[count].length; count_sub++){
@@ -138,7 +138,7 @@
                 var a = document.createElement("a"); //generate a element
                 a.className = "dropdown-item"; //add class to a
                 a.id = `dropdown-item-${count}-${count_sub}`;
-                //a.addEventListener('click', getHtmlText(a.id));
+                a.setAttribute("onclick", "getHtmlText(this.id);closeDropdown('dropdown-menu')");
                 a.innerText = room_names[count][count_sub]; //set text to a
                 li_sub.appendChild(a);
                 ul_sub.appendChild(li_sub);
