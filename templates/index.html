@@ -138,7 +138,7 @@
                 var a = document.createElement("a"); //generate a element
                 a.className = "dropdown-item"; //add class to a
                 a.id = "dropdown-item-${count}-${count_sub}";
-                console.log(a.id);
+                a.addEventListener('click', getHtmlText(this.id));
                 a.innerText = room_names[count][count_sub]; //set text to a
                 li_sub.appendChild(a);
                 ul_sub.appendChild(li_sub);
