@@ -85,7 +85,7 @@
     </script>
     -->
 
-    <h1>現在地: <span id="receivedName"></span></h1>
+    <h1 id="now">現在地: <span id="receivedName"></span></h1>
     <!-- write code below here -->
     <div class="dropdown btn-group d-grid gap-2">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-menu-1" data-bs-auto-close="outside">
@@ -94,9 +94,9 @@
         <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1" id="dropdown-menu"></ul>
     </div>
 
-    <h1>目的地: <span id="checkGoal"></span></h1>
+    <h1 id="goal">目的地: <span id="checkGoal"></span></h1>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button" href="?">案内開始</button>
+        <button class="btn btn-primary me-md-2" type="button" href="?currentlocation=checkHtmlText(now)&goal=checkHtmlText(goal)">案内開始</button>
     </div>
 
     <script language="javascript" type="text/javascript">
@@ -112,6 +112,11 @@
         function closeDropdown(id){
             let button_element = document.getElementById(id); //get elements
             button_element.classList.remove("show"); //remove class "show"
+        }
+
+        function checkHtmlText(id){
+            var textContent = document.getElementById(id);
+            return textContent.textContent;
         }
 
         const room_types = ["通常教室", "大教室", "特殊室"]; //set types that buildings have ["type0", "type1", ...]
