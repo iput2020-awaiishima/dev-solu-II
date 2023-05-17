@@ -19,12 +19,12 @@
             console.log(params);
 
             // パラメータから「username」を取得
-            const username = params.get("currentlocation");
+            const currentLocation = params.get("currentlocation");
 
             // IDを使ってspan要素を取得する
             const span = document.getElementById("receivedName");
             // 取得したspan要素に受け取ったパラメータを代入
-            span.innerText = username;
+            span.innerText = currentLocation;
         }
     </script>
 </head>
@@ -96,7 +96,7 @@
 
     <h1>目的地: <span id="checkGoal"></span></h1>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button" href="">案内開始</button>
+        <button class="btn btn-primary me-md-2" type="button" href="?">案内開始</button>
     </div>
 
     <script language="javascript" type="text/javascript">
