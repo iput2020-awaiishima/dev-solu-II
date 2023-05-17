@@ -138,6 +138,7 @@
                 var a = document.createElement("a");
                 a.className = "dropdown-item";
                 a.id = "dropdown-item-${count}-${count_sub}";
+                a.innerText = room_names[count][count_sub];
                 a.addEventListener("click", getHtmlText(this.id));
                 a.addEventListener("click", closeDropdown("dropdown-menu"));
                 li_sub.appendChild(a);
