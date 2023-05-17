@@ -123,6 +123,8 @@
         button.className = "btn dropdown-toggle dropdown-item";
         button.id = "dropdown-menu-2";
         button.innerText = "normal rooms";
+        button.setAttribute("data-bs-toggle", "dropdown");
+        button.setAttribute("aria-expanded", "false");
         button.setAttribute("onclick","console.log(1)");
         var ul_sub = document.createElement("ul");
         ul_sub.className = "dropdown-menu";
