@@ -96,7 +96,7 @@
 
     <h1 id="goal">目的地: <span id="checkGoal"></span></h1>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button" href="#?currentlocation=checkHtmlText(now)&goal=checkHtmlText(goal)">案内開始</button>
+        <button id="submit-button" class="btn btn-primary me-md-2" type="button" href="">案内開始</button>
     </div>
 
     <script language="javascript" type="text/javascript">
@@ -154,6 +154,9 @@
             li.appendChild(div);
             ul_main.appendChild(li);
         }
+
+        let sub_button = document.getElementById("submit_button");
+        sub_button.setAttribute("href", `#currentlocation=$checkHtmlText("receivedName")&goal=$checkHtmlText("checkGoal")`);
         
     </script>
 
