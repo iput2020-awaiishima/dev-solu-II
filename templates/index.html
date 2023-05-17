@@ -123,7 +123,10 @@
         button.className = "btn dropdown-toggle dropdown-item";
         button.id = "dropdown-menu-2";
         button.innerText = "normal rooms";
-        div.appendChild(button); 
+        var li_sub = document.createElement("li");
+        li_sub.innerText = "li_sub";
+        div.appendChild(button);
+        div.appendChild(li_sub);
         li.appendChild(div);
         ul_main.appendChild(li);
         
