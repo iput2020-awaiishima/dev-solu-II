@@ -114,8 +114,8 @@
             button_element.classList.remove("show"); //remove class "show"
         }
 
-        const room_types = ["通常教室", "大教室", "特殊室"];
-        const room_names = [["311"],["Aホール", "Bホール"],["図書室", "保健室", "other"]];
+        const room_types = ["通常教室", "大教室", "特殊室"]; //set types that the building has ["type0", "type1", ...]
+        const room_names = [["311"],["Aホール", "Bホール"],["図書室", "保健室", "other"]]; //set names that the building has [["type0_room0, ..."],["type1_room1", ...], ...]
 
         var ul_main = document.getElementById("dropdown-menu");
         for(count = 0;count < room_types.length;count++){
