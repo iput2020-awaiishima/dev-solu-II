@@ -100,15 +100,6 @@
     </div>
 
     <script language="javascript" type="text/javascript">
-        const IPUT_rooms_type = ["通常教室","大教室","特殊室",];
-        const IPUT_rooms = [
-            {"name":"311","type":"通常教室"},
-            {"name":"Aホール","type":"大教室"},
-            {"name":"Bホール","type":"大教室"},
-            {"name":"図書室","type":"特殊室"},
-            {"name":"保健室","type":"特殊室"},
-            {"name":"finish-place","type":"特殊室"},
-        ];
 
         function getHtmlText(id){
             var placeText = document.getElementById(id);
@@ -123,40 +114,16 @@
             button_element.classList.remove("show"); //remove class "show"
         }
 
-        var ul = document.getElementById("dropdown-menu");
-        for(var count = 0; count < IPUT_rooms_type.length; count++){
-            var li_one = document.createElement("li");
-            var div = document.createElement("div");
-            div.className = "btn-group" + "dropend";
-            var button = document.createElement("button");
-            button.className = "btn" + "dropdown-toggle" + "dropdown-item";
-            button.id = "dropdown-menu-2";
-            button.data-bs-toggle="dropdown";
-            button.aria-expanded = "false";
-            button.textContent = IPUT_rooms_type[count];
-            var room_selection = IPUT_rooms.filter(function(object) {
-                return object.type == IPUT_rooms_type[count];
-            }).shift();
-            console.log(room_selection);
-            var ul_sub = document.createElement("ul");
-            ul_sub.className = "dropdown-menu";
-            ul_sub.aria-labelledby = "dropdown-menu-2";
-            for(count_sub = 0; count_sub < room_selection.length; count_sub++){
-                var li_two = document.createElement("li");
-                var a = document.createElement("a");
-                a.id = "dropdown-item" + count + "-" + count_sub;
-                a.className = "dropdown-item";
-                a.addEventListener("click",getHtmlText(this.id));
-                a.addEventListener("click",closeDropdown('dropdown-menu'));
-                a.textContent = room_selection.name;
-                li_two.appendChild(a);
-            }
-            ul_sub.appendChild(li_two);
-            button.appendChild(ul_sub);
-            div.appendChild(button);
-            li_one.appendChild(button);
-            ul.appendChild(li_one);
-        }
+        var ul_main = document.getElementById("dropdown-menu");
+        var li = document.createElement("li");
+        var div = document.createElement("div");
+        div.className = "btn-group" + "dropend";
+        var button = document.createElement("button");
+        button.className = "btn" + "dropdown-toggle" + "dropdown-item";
+        button.id = "dropdown-menu-2";
+        button.data-bs-toggle = "dropdown";
+        button.aria-expanded = "false";
+        button.innerText = "test";
         
     </script>
 
