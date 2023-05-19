@@ -136,6 +136,7 @@
         const room_types = ["通常教室", "大教室", "特殊室"]; //set types that buildings have ["type0", "type1", ...]
         const room_names = [["311"],["Aホール", "Bホール"],["図書室", "保健室", "other"]]; //set names that building have [["type0_room0, ..."],["type1_room1", ...], ...]
 
+        let current = document.getElementById("receivedName");
         var ul_main = document.getElementById("dropdown-menu");
         for(count = 0;count < room_types.length;count++){
             var li = document.createElement("li");
@@ -152,7 +153,6 @@
             var ul_sub = document.createElement("ul");
             ul_sub.className = "dropdown-menu";
             for(count_sub = 0;count_sub < room_names[count].length; count_sub++){
-                let current = document.getElementById("receivedName");
                 if(current.textContent != room_names[count][count_sub]){
                     console.log(current.textContent);
                     console.log(room_names[count][count_sub]);
