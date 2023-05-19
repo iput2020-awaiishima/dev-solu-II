@@ -137,12 +137,12 @@
         const room_names = [["311"],["Aホール", "Bホール"],["図書室", "保健室", "other"]]; //set names that building have [["type0_room0, ..."],["type1_room1", ...], ...]
 
         var ul_main = document.getElementById("dropdown-menu");
-        console.log(currentLocation);
         for(count = 0;count < room_types.length;count++){
             var li = document.createElement("li");
-            //li.innerText = "1";
+
             var div = document.createElement("div");
             div.className = "btn-group dropend";
+
             var button = document.createElement("button");
             button.className = "btn dropdown-toggle dropdown-item";
             button.id = "dropdown-menu-2";
@@ -150,23 +150,23 @@
             button.setAttribute("data-bs-toggle", "dropdown"); //add attribute data-bs-toggele="dropdown" by js
             button.setAttribute("aria-expanded", "false"); //add attribute aria-expanded="false" by js
             //button.setAttribute("onclick","console.log(1)"); //for check button's movement
+            
             var ul_sub = document.createElement("ul");
             ul_sub.className = "dropdown-menu";
+
             for(count_sub = 0;count_sub < room_names[count].length; count_sub++){
-                if(current.textContent != room_names[count][count_sub]){
-                    console.log(current.textContent);
-                    console.log(room_names[count][count_sub]);
-                    var li_sub = document.createElement("li");
-                    //li_sub.innerText = room_names[count][count_sub];
-                    var a = document.createElement("a"); //generate a element
-                    a.className = "dropdown-item"; //add class to a
-                    a.id = `dropdown-item-${count}-${count_sub}`;
-                    a.setAttribute("onclick", "getHtmlText(this.id);closeDropdown('dropdown-menu')");
-                    a.innerText = room_names[count][count_sub]; //set text to a
-                    li_sub.appendChild(a);
-                    ul_sub.appendChild(li_sub);
-                }
+                var li_sub = document.createElement("li");
+                //li_sub.innerText = room_names[count][count_sub];
+
+                var a = document.createElement("a"); //generate a element
+                a.className = "dropdown-item"; //add class to a
+                a.id = `dropdown-item-${count}-${count_sub}`;
+                a.setAttribute("onclick", "getHtmlText(this.id);closeDropdown('dropdown-menu')");
+                a.innerText = room_names[count][count_sub]; //set text to a
                 
+                li_sub.appendChild(a);
+                ul_sub.appendChild(li_sub);
+            
             }
             div.appendChild(button);
             div.appendChild(ul_sub);
