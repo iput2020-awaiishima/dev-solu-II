@@ -103,9 +103,10 @@
     </div>
 
     <script language="javascript" type="text/javascript">
+        var placeText;
 
         function getHtmlText(id){
-            var placeText = document.getElementById(id);
+            placeText = document.getElementById(id);
             setFinishPlace(placeText.textContent);
         }
 
