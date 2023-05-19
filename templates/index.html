@@ -25,6 +25,8 @@
             const span = document.getElementById("receivedName");
             // 取得したspan要素に受け取ったパラメータを代入
             span.innerText = currentLocation;
+
+            return currentLocation;
         }
     </script>
 </head>
@@ -110,7 +112,7 @@
             var finishPlaceSpan = document.getElementById('checkGoal');
             finishPlaceSpan.textContent = placeData;
         }
-        
+
         function closeDropdown(id){
             let button_element = document.getElementById(id); //get elements
             button_element.classList.remove("show"); //remove class "show"
