@@ -105,13 +105,22 @@
             var placeText = document.getElementById(id);
             setFinishPlace(placeText.textContent);
         }
+
         function setFinishPlace(placeData){
             var finishPlaceSpan = document.getElementById('checkGoal');
             finishPlaceSpan.textContent = placeData;
         }
+        
         function closeDropdown(id){
             let button_element = document.getElementById(id); //get elements
             button_element.classList.remove("show"); //remove class "show"
+            setHrefLink(currentLocation, placeText.textContent);
+        }
+
+        function setHrefLink(start, goal) {
+            var textLink = `#?currentlocation=${start}&goal=${goal}`;
+            var buttonInfo = document.getElementById("submit-button");
+            buttonInfo.setAttribute("href", textLink);
         }
 
         function checkHtmlText(id){
